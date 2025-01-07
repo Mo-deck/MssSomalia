@@ -1,6 +1,14 @@
+import styles from "./header.module.scss";
 const Header = () => {
   return (
-    <div>Header</div>
+    <div>
+        <header className={styles.header}>
+            <ul>
+                <li><a href="#" className={styles.logo}>MissSomali</a></li>
+                <li><a href="#">All Competitors</a></li>
+            </ul>
+        </header>
+    </div>
   )
 }
 
