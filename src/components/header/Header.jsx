@@ -4,7 +4,7 @@ const Header = () => {
     <div>
         <header className={styles.header}>
             <ul>
-                <li><a href="#" className={styles.logo}>Best Comedians</a></li>
+                <li><a href="#" className={styles.logo}>MssSomalia</a></li>
                 <li><a href="#">All Competitors</a></li>
             </ul>
         </header>

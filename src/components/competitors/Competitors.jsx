@@ -1,13 +1,22 @@
-import React from 'react'
+import competitors from "../../assets/competitors.json"
+import styles from "./competitors.module.scss"
 
 function Competitors() {
-  return 
+  return (
     <div className={styles.competitors_container}>
         <div className={styles.competitors_header}>
-            <span>Best Comedians</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet iste saepe, placeat nulla, sed corrupti expedita officia vitae cumque maxime, fugiat fugit tempora. At omnis aut cumque quibusdam optio illum?</p>
+            <span>Mss Somalia</span> 
+            <p>Built with the React.js - the template is a well-structured, throughtfully componentized Next.js project, giving you a codebase that's productive and enjoybale to work in.</p>
+        </div>
+        <div className={styles.competitors}>
+          {
+            competitors.map((competitor) =>(
+              <span key={competitor.Id}>{competitor.FirstName}</span>
+            ))
+          }
         </div>
     </div>
+  )
 }
 
 export default Competitors
