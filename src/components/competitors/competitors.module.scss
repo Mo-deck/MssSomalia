@@ -18,12 +18,18 @@
 
         p{
             color: mixin.$secondaryTextColor;
-            font-size: 16px;
+            font-size: 16px; 
             margin: 0.95px 0;
             line-height: 28px;
             word-wrap: break-word;
             text-align: center;
             width: mixin.$tabletBreakpoints;
         }
+    }
+    .competitors{
+        display: grid;
+        align-items: center ;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        margin: mixin.$spaceY;
     }
 }
