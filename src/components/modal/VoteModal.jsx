@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
 import styles from './vote.module.scss'
-import { FaPlus, FaMinus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 
 const customStyles = {
@@ -85,15 +85,20 @@ export const VoteModal = () => {
                 <span>Purchase Vote</span>
                 <div className={styles.vote_controls}>
                   <button type="button">
-                    <FaMinus className={styles.icon} />
+                    <AiOutlineMinus className={styles.icon} />
                   </button>
                   <button type="button">
-                    <FaPlus className={styles.icon} />
+                    <AiOutlinePlus className={styles.icon} />
                   </button>
                 </div>
               </div>
             </div>
-            
+
+            <form>
+              <span>Pay with Evc,Zaad and Sahal</span>
+              <input type="number" placeholder='Enter Your Number' className={styles.form_control} />
+              <button type="submit">Vote Now</button>
+            </form>
 
           </div>
       </Modal>
