@@ -54,7 +54,7 @@ export const VoteModal = () => {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
-        className={styles.modal} overlayClassName={styles.overlayClassName}>
+        className={styles.modal} overlayClassName={styles.overlay}>
 
           <div className={styles.modal_container}>
 
