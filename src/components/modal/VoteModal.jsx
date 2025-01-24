@@ -80,6 +80,20 @@ export const VoteModal = () => {
               </div>
             </div>
 
+            <div className={styles.vote_container}>
+              <div className={styles.vote_count}>
+                <span>Purchase Vote</span>
+                <div className={styles.vote_controls}>
+                  <button type="button">
+                    <FaMinus className={styles.icon} />
+                  </button>
+                  <button type="button">
+                    <FaPlus className={styles.icon} />
+                  </button>
+                </div>
+              </div>
+            </div>
+            
 
           </div>
       </Modal>
