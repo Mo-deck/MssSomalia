@@ -59,47 +59,46 @@ export const VoteModal = () => {
           <div className={styles.modal_container}>
 
             <div className={styles.competitor_info}>
-              <div style={backgroundStyle}></div>
-              <div className={styles.bio}>
-                <div className={styles.divider}>
-                  <label htmlFor="">Name</label>
-                  <span>Farhio Cabdi</span>
+                <div style={backgroundStyle}></div>
+                <div className={styles.bio}>
+                    <div className={styles.divider}>
+                       <label htmlFor="">Name</label>
+                        <span>Farhio Cabdi</span>
+                     </div>
+                     <div className={styles.divider}>
+                        <label htmlFor="">State</label>
+                       <span>Jubbaland</span>
+                      </div>
+                   <div className={styles.divider}>
+                       <label htmlFor="">Background Study</label>
+                        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident voluptas repudiandae quas perferendis similique maxime ipsam error quo nihil, quasi alias. Amet, illo. Alias doloremque voluptatem aliquam quo ex impedit?</span>
+                   </div>
+                     <div className={styles.divider}>
+                        <label htmlFor="">Employement</label>
+                          <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident voluptas repudiandae quas perferendis similique maxime ipsam error quo nihil, quasi alias. Amet, illo. Alias doloremque voluptatem aliquam quo ex impedit?</span>
+                       </div>
                 </div>
-                <div className={styles.divider}>
-                  <label htmlFor="">State</label>
-                  <span>Jubbaland</span>
-                </div>
-                <div className={styles.divider}>
-                  <label htmlFor="">Background Study</label>
-                  <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident voluptas repudiandae quas perferendis similique maxime ipsam error quo nihil, quasi alias. Amet, illo. Alias doloremque voluptatem aliquam quo ex impedit?</span>
-                </div>
-                <div className={styles.divider}>
-                  <label htmlFor="">Employement</label>
-                  <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident voluptas repudiandae quas perferendis similique maxime ipsam error quo nihil, quasi alias. Amet, illo. Alias doloremque voluptatem aliquam quo ex impedit?</span>
-                </div>
-              </div>
             </div>
 
             <div className={styles.vote_container}>
-              <div className={styles.vote_count}>
-                <span>Purchase Vote</span>
-                <div className={styles.vote_controls}>
-                  <button type="button">
-                    <AiOutlineMinus className={styles.icon} />
-                  </button>
-                  <button type="button">
-                    <AiOutlinePlus className={styles.icon} />
-                  </button>
-                </div>
-              </div>
+                  <div className={styles.vote_count}>
+                     <span>Purchase Vote</span>
+                      <div className={styles.vote_controls}>
+                            <button type="button">
+                               <AiOutlineMinus className={styles.icon} />
+                           </button>
+                           <span>50</span>
+                          <button type="button">
+                                <AiOutlinePlus className={styles.icon} />
+                            </button>
+                       </div>
+                   </div>
+                <form>
+                   <span>Pay with Evc,Zaad and Sahal</span>
+                      <input type="number" placeholder='Enter Your Number' className={styles.form_control} />
+                    <button type="submit">Vote Now</button>
+                 </form>
             </div>
-
-            <form>
-              <span>Pay with Evc,Zaad and Sahal</span>
-              <input type="number" placeholder='Enter Your Number' className={styles.form_control} />
-              <button type="submit">Vote Now</button>
-            </form>
-
           </div>
       </Modal>
   </div>
