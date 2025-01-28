@@ -12,7 +12,7 @@ function Competitors() {
         <div className={styles.competitors}>
           {
             competitors.map((competitor) =>(
-              <Competitor competitor={competitor} />
+              <Competitor key={competitor.Id} competitor={competitor} />
             ))
           }
         </div>
