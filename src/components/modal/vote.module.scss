@@ -18,7 +18,6 @@
     bottom: 40px;
     background-color: rgb(247, 247, 249);
     width: 80vw;
-    height: 100vh;
     border-radius: 10px;
     outline: none;
 }
@@ -60,6 +59,7 @@
         display: grid;
         grid-template-columns: 1fr 3fr;
         gap: 10px;
+        bottom: 20px;
 
         .vote_count{
             display: flex;
