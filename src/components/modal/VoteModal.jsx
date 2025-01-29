@@ -2,7 +2,8 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 import styles from './vote.module.scss'
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
+import { handleModal } from '../../features/modal/modalSlice';
 
 
 const customStyles = {
@@ -19,25 +20,15 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 export const VoteModal = () => {
+  const dispatch = useDispatch()
 
     let subtitle;
-    const [modalIsOpen, setIsOpen] = useState(false);
 
     const {isOpen} = useSelector(store => store.modal)
     // console.log(modalState);
-    
-  
-    function openModal() {
-      setIsOpen(true);
-    }
-  
-    function afterOpenModal() {
-      // references are now sync'd and can be accessed.
-      subtitle.style.color = '#f00';
-    }
-  
+
     function closeModal() {
-      setIsOpen(false);
+      dispatch(handleModal())
     }  
 
     const backgroundStyle ={
@@ -52,10 +43,10 @@ export const VoteModal = () => {
   return(
 
     <div>
-      <button onClick={openModal}>Open Modal</button>
+      {/* <button onClick={()=> dispatch(handleModal())
+        }>Open Modal</button> */}
        <Modal
         isOpen={isOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
