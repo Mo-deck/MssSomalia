@@ -25,6 +25,10 @@ export const VoteModal = () => {
     let subtitle;
 
     const {isOpen} = useSelector(store => store.modal)
+    const {currentCompetitor} = useSelector(store => store.competitor)
+
+    console.log("Current Competitor:", currentCompetitor);
+    
     // console.log(modalState);
 
     function closeModal() {
@@ -34,7 +38,7 @@ export const VoteModal = () => {
     const backgroundStyle ={
       width: "100%",
       height: "500px",
-      background: `linear-gradient(0deg, #29ae56b2, rgba(0,0,0,0)60%, rgba(0,0,0,0)), url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D')`,
+      background: `linear-gradient(0deg, #29ae56b2, rgba(0,0,0,0)60%, rgba(0,0,0,0)), url('${currentCompetitor?.Photo}')`,
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       borderButtomRightRadius: "10px"
@@ -43,8 +47,6 @@ export const VoteModal = () => {
   return(
 
     <div>
-      {/* <button onClick={()=> dispatch(handleModal())
-        }>Open Modal</button> */}
        <Modal
         isOpen={isOpen}
         onRequestClose={closeModal}
@@ -59,19 +61,19 @@ export const VoteModal = () => {
                 <div className={styles.bio}>
                     <div className={styles.divider}>
                        <label htmlFor="">Name</label>
-                        <span>Farhio Cabdi</span>
+                        <span>{currentCompetitor?.FirstName + " " + currentCompetitor?.LastName }</span>
                      </div>
                      <div className={styles.divider}>
                         <label htmlFor="">State</label>
-                       <span>Jubbaland</span>
+                       <span>{currentCompetitor?.RepresentingState}</span>
                       </div>
                    <div className={styles.divider}>
                        <label htmlFor="">Background Study</label>
-                        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident voluptas repudiandae quas perferendis similique maxime ipsam error quo nihil, quasi alias. Amet, illo. Alias doloremque voluptatem aliquam quo ex impedit?</span>
+                        <span>{currentCompetitor?.PersonalBackground}</span>
                    </div>
                      <div className={styles.divider}>
                         <label htmlFor="">Employement</label>
-                          <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident voluptas repudiandae quas perferendis similique maxime ipsam error quo nihil, quasi alias. Amet, illo. Alias doloremque voluptatem aliquam quo ex impedit?</span>
+                          <span>{currentCompetitor?.EmploymentorSchool}</span>
                        </div>
                 </div>
             </div>

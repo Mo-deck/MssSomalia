@@ -2,6 +2,7 @@ import styles from "./Competitor.module.scss"
 import { MdHowToVote } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { handleModal } from "../../features/modal/modalSlice";
+import { setCurrentCompetitor } from "../../features/competitors/competitor";
 
 function Competitor({competitor}) {
   const backgroundStyle ={
@@ -15,6 +16,7 @@ function Competitor({competitor}) {
 
 
   const voteNow =() =>{
+    dispatch(setCurrentCompetitor(competitor))
     dispatch(handleModal())
   }
   return (
