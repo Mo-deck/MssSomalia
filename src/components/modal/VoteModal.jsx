@@ -4,6 +4,7 @@ import styles from './vote.module.scss'
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import {useSelector, useDispatch} from 'react-redux'
 import { handleModal } from '../../features/modal/modalSlice';
+import { decreaseVote, increaseVote } from '../../features/competitors/competitorSlice';
 
 
 const customStyles = {
@@ -25,7 +26,7 @@ export const VoteModal = () => {
     let subtitle;
 
     const {isOpen} = useSelector(store => store.modal)
-    const {currentCompetitor} = useSelector(store => store.competitor)
+    const {currentCompetitor, voteCount} = useSelector(store => store.competitor)
 
     console.log("Current Competitor:", currentCompetitor);
     
@@ -84,11 +85,14 @@ export const VoteModal = () => {
                   <div className={styles.vote_count}>
                      <span>Purchase Vote</span>
                       <div className={styles.vote_controls}>
-                            <button type="button">
+                            <button type="button"
+                            onClick={() => dispatch(decreaseVote())}>
                                <AiOutlineMinus className={styles.icon} />
                            </button>
-                           <span>50</span>
-                          <button type="button">
+                           <span>{voteCount}</span>
+                          <button type="button"
+                           onClick={() => dispatch(increaseVote())}
+                          >
                                 <AiOutlinePlus className={styles.icon} />
                             </button>
                        </div>

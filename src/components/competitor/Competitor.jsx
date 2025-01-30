@@ -2,7 +2,7 @@ import styles from "./Competitor.module.scss"
 import { MdHowToVote } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { handleModal } from "../../features/modal/modalSlice";
-import { setCurrentCompetitor } from "../../features/competitors/competitor";
+import { setCurrentCompetitor } from "../../features/competitors/competitorSlice";
 import { useSelector } from "react-redux";
 
 function Competitor({competitor}) {
