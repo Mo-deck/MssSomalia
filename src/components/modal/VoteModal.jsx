@@ -35,10 +35,12 @@ export const VoteModal = () => {
       dispatch(handleModal())
     }  
 
+    if(!currentCompetitor) return;
+
     const backgroundStyle ={
       width: "100%",
       height: "500px",
-      background: `linear-gradient(0deg, #29ae56b2, rgba(0,0,0,0)60%, rgba(0,0,0,0)), url('${currentCompetitor?.Photo}')`,
+      background: `linear-gradient(0deg, #29ae56b2, rgba(0,0,0,0)60%, rgba(0,0,0,0)), url('${currentCompetitor.Photo}')`,
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       borderButtomRightRadius: "10px"
@@ -61,19 +63,19 @@ export const VoteModal = () => {
                 <div className={styles.bio}>
                     <div className={styles.divider}>
                        <label htmlFor="">Name</label>
-                        <span>{currentCompetitor?.FirstName + " " + currentCompetitor?.LastName }</span>
+                        <span>{currentCompetitor.FirstName + " " + currentCompetitor.LastName }</span>
                      </div>
                      <div className={styles.divider}>
                         <label htmlFor="">State</label>
-                       <span>{currentCompetitor?.RepresentingState}</span>
+                       <span>{currentCompetitor.RepresentingState}</span>
                       </div>
                    <div className={styles.divider}>
                        <label htmlFor="">Background Study</label>
-                        <span>{currentCompetitor?.PersonalBackground}</span>
+                        <span>{currentCompetitor.PersonalBackground}</span>
                    </div>
                      <div className={styles.divider}>
                         <label htmlFor="">Employement</label>
-                          <span>{currentCompetitor?.EmploymentorSchool}</span>
+                          <span>{currentCompetitor.EmploymentorSchool}</span>
                        </div>
                 </div>
             </div>

@@ -3,21 +3,22 @@ import { MdHowToVote } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { handleModal } from "../../features/modal/modalSlice";
 import { setCurrentCompetitor } from "../../features/competitors/competitor";
+import { useSelector } from "react-redux";
 
 function Competitor({competitor}) {
+  
+  const dispatch = useDispatch()
+  
+  
+  const voteNow =() =>{
+    dispatch(setCurrentCompetitor(competitor))
+    dispatch(handleModal())
+  };  
   const backgroundStyle ={
     width: "100%",
     background: `linear-gradient(0deg, #128b4871, rgba(0,0,0,0)60%,rgba(0,0,0,0)),url(${competitor.Photo})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat"
-  }
-
-  const dispatch = useDispatch()
-
-
-  const voteNow =() =>{
-    dispatch(setCurrentCompetitor(competitor))
-    dispatch(handleModal())
   }
   return (
     <div className={styles.competitor}  style={backgroundStyle}>
