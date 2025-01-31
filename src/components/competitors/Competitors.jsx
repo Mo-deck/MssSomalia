@@ -1,8 +1,11 @@
-import competitors from "../../assets/competitors.json"
+// import competitors from "../../assets/competitors.json"
 import Competitor from "../competitor/Competitor"
 import styles from "./competitors.module.scss"
+import { useSelector } from "react-redux"
 
 function Competitors() {
+
+ const {competitors} = useSelector((store) => store.competitor)
   return (
     <div className={styles.competitors_container}>
         <div className={styles.competitors_header}>

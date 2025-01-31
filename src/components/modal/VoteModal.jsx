@@ -4,7 +4,8 @@ import styles from './vote.module.scss'
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import {useSelector, useDispatch} from 'react-redux'
 import { handleModal } from '../../features/modal/modalSlice';
-import { decreaseVote, increaseVote } from '../../features/competitors/competitorSlice';
+import { addVoteToCompetitor, decreaseVote, increaseVote } from '../../features/competitors/competitorSlice';
+
 
 
 const customStyles = {
@@ -46,6 +47,11 @@ export const VoteModal = () => {
       backgroundRepeat: "no-repeat",
       borderButtomRightRadius: "10px"
      };
+
+     const handleSubmit = (event) =>{
+      event.preventDefault();
+      dispatch(addVoteToCompetitor(currentCompetitor.Id))
+     }
 
   return(
 
@@ -97,7 +103,7 @@ export const VoteModal = () => {
                             </button>
                        </div>
                    </div>
-                <form>
+                <form onSubmit={handleSubmit}>
                    <span>Pay with Evc,Zaad and Sahal</span>
                       <input type="number" placeholder='Enter Your Number' className={styles.form_control} />
                     <button type="submit">Vote Now</button>
