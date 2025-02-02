@@ -4,7 +4,7 @@ import styles from './vote.module.scss'
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import {useSelector, useDispatch} from 'react-redux'
 import { handleModal } from '../../features/modal/modalSlice';
-import { addVoteToCompetitor, decreaseVote, increaseVote } from '../../features/competitors/competitorSlice';
+import { addVoteToCompetitor, decreaseVote, increaseVote, resetState } from '../../features/competitors/competitorSlice';
 
 
 
@@ -50,7 +50,10 @@ export const VoteModal = () => {
 
      const handleSubmit = (event) =>{
       event.preventDefault();
+      console.log('here i s ',currentCompetitor)
       dispatch(addVoteToCompetitor(currentCompetitor.Id))
+      dispatch(resetState())
+      closeModal();
      }
 
   return(
