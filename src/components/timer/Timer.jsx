@@ -18,7 +18,7 @@ import Countdown from 'react-countdown';
       };
       return (
           <div className={styles.countdown}>
-            <Countdown date={Date.now() + 5000} renderer={renderer}/>
+            <Countdown date={Date.now() + 6566400000} renderer={renderer}/>
     </div>
   )
 }
