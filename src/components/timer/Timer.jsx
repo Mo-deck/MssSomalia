@@ -1,27 +1,24 @@
+import Time from "./Time";
 import styles from "./timer.module.scss";
+import Countdown from 'react-countdown';
 
  const Timer = () => {
-  return (
-    <div className={styles.countdown}>
-        <h1>VOTING ENDS IN</h1>
-        <div className={styles.time}>
-            <div className={styles.digit_text}>
-                <span className={styles.digit}>04:</span>
-                <span className={styles.text}>Days</span>
-            </div>
-            <div className={styles.digit_text}>
-                <span className={styles.digit}>09:</span>
-                <span className={styles.text}>Hours</span>
-            </div>
-            <div className={styles.digit_text}>
-                <span className={styles.digit}>03:</span>
-                <span className={styles.text}>Minutes</span>
-            </div>
-            <div className={styles.digit_text}>
-                <span className={styles.digit}>05:</span>
-                <span className={styles.text}>Seconds</span>
-            </div>
-        </div>
+
+
+    const renderer = ({ days, hours, minutes, seconds, completed }) => {
+        if (completed) {
+          // Render a completed state
+          return <completed />;
+        } else {
+          // Render a countdown
+          return (
+            <Time  days={days} hours={hours} minutes={minutes} seconds={seconds} />
+          );
+        }
+      };
+      return (
+          <div className={styles.countdown}>
+            <Countdown date={Date.now() + 5000} renderer={renderer}/>
     </div>
   )
 }
